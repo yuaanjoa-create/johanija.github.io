@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuaan Ant — Web Scraping, Python Automation & Web Development</title>
+<meta name="description" content="Freelance web developer specializing in web scraping, data extraction, Python automation and website bug fixes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #14a800;
+  --accent-2: #3fb950;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(13, 17, 23, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-weight: 800; font-size: 20px; }
+.logo span { color: var(--accent); }
+nav ul { display: flex; gap: 28px; list-style: none; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+nav a:hover { color: var(--accent-2); }
+.hero { padding: 96px 0 72px; text-align: center; }
+.badge {
+  display: inline-block; padding: 6px 16px; margin-bottom: 24px;
+  border: 1px solid var(--accent); border-radius: 999px;
+  color: var(--accent-2); font-size: 13px; font-weight: 600;
+}
+.hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.15; }
+.hero h1 em { font-style: normal; color: var(--accent-2); }
+.hero p { max-width: 620px; margin: 20px auto 32px; color: var(--muted); font-size: 17px; }
+.btn {
+  display: inline-block; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;
+  transition: transform .15s, background .2s, border-color .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #18b508; }
+.btn-outline { border: 1px solid var(--border); color: var(--text); margin-left: 12px; }
+.btn-outline:hover { border-color: var(--accent-2); }
+section { padding: 72px 0; border-top: 1px solid var(--border); }
+h2.section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin-bottom: 40px; }
+.grid { display: grid; gap: 20px; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 26px; transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.card .icon { font-size: 30px; margin-bottom: 14px; }
+.card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tag {
+  background: #1f2937; border: 1px solid var(--border); border-radius: 999px;
+  padding: 3px 12px; font-size: 12px; color: var(--accent-2);
+}
+.project { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.project .money { color: var(--accent-2); font-weight: 700; white-space: nowrap; font-size: 14px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .btn-outline { margin-left: 0; display: inline-block; margin-top: 12px; } }
+.stat-list { list-style: none; }
+.stat-list li { display: flex; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.stat-list .num { font-size: 26px; font-weight: 800; color: var(--accent-2); min-width: 90px; }
+.stat-list .lbl { color: var(--muted); font-size: 14px; }
+.contact-box {
+  text-align: center; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 16px; padding: 56px 28px;
+}
+.contact-box h2 { font-size: 30px; font-weight: 800; margin-bottom: 12px; }
+.contact-box p { color: var(--muted); margin-bottom: 28px; }
+footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">yuaan<span>.dev</span></div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="badge">Available for new projects</div>
+    <h1>Web scraping, automation <em>and</em> clean data — delivered fast.</h1>
+    <p>I'm a freelance developer specializing in web scraping, Python automation and website fixes. Most orders delivered within 24–48 hours, with clean, tested, ready-to-use results.</p>
+    <a class="btn btn-primary" href="#contact">Get a free quote</a>
+    <a class="btn btn-outline" href="#services">See services</a>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Everything I do, in one place. Fixed prices. No surprises.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon">🕸️</div>
+        <h3>Web Scraping &amp; Data Extraction</h3>
+        <p>Any website — products, prices, contacts, reviews, listings. Delivered in Excel, CSV or JSON, fully cleaned and organized.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Scrapy</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Python Automation</h3>
+        <p>Custom scripts that kill repetitive work: Excel processing, file organization, PDF handling, email automation, report generation.</p>
+        <div class="tags"><span class="tag">Scripting</span><span class="tag">Pandas</span><span class="tag">APIs</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Website Bug Fixes</h3>
+        <p>Broken layout? Dead buttons? Messy mobile view? I fix HTML, CSS and JavaScript issues fast — with clean, tested code.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <h2 class="section-title">Recent Work</h2>
+    <p class="section-sub">A sample of delivered projects.</p>
+    <div class="grid">
+      <div class="card project">
+        <div>
+          <h3>E-commerce price monitoring scraper</h3>
+          <p>Daily price extraction from 5 competitor stores, auto-exported to Excel with change tracking.</p>
+        </div>
+        <div class="money">$50</div>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Bulk Excel report automation</h3>
+          <p>Replaced 3 hours of weekly manual work with a single Python script — data merge, cleanup and charting included.</p>
+        </div>
+        <div class="money">$35</div>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Local business directory scrape</h3>
+          <p>12,000+ verified contact records (name, phone, email, website) delivered as a filtered spreadsheet.</p>
+        </div>
+        <div class="money">$45</div>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Responsive layout repair, WordPress site</h3>
+          <p>Fixed broken mobile menu, overlapping sections and 14 CSS bugs across the homepage and inner pages.</p>
+        </div>
+        <div class="money">$25</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub" style="margin-bottom:16px;">Independent freelance developer working with clients worldwide.</p>
+        <p style="color:var(--muted);">I focus on three things: speed, accuracy and communication. Before every order I confirm exactly what you need, then deliver clean and tested work — with revisions until you're happy.</p>
+      </div>
+      <ul class="stat-list">
+        <li><span class="num">24–48h</span><span class="lbl">typical delivery time</span></li>
+        <li><span class="num">100%</span><span class="lbl">tested, documented deliverables</span></li>
+        <li><span class="num">∞</span><span class="lbl">revisions until you're satisfied</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Have a task in mind?</h2>
+      <p>Message me with what you need — I'll reply with a plan, timeline and fixed quote. No obligation.</p>
+      <a class="btn btn-primary" href="https://www.fiverr.com/johanija">Hire me on Fiverr</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 yuaan.dev — Web scraping, Python automation &amp; web fixes.</div>
+</footer>
+
+</body>
+</html>
