@@ -1,16 +1,15 @@
 # johanija.github.io
 # Yuaan Ant — Portfolio
 
-My personal portfolio website: web scraping, Python automation and website bug fixes.
+Web scraping, Python automation and website bug fixes.
 
 ## Live site
-👉 https://johanija.github.io
+👉 https://yuaanjoa-create.github.io/johanija.github.io/
 
-## What I do
+## Services
 - Web scraping & data extraction (Excel, CSV, JSON)
-- Python automation scripts
+- Custom Python automation scripts
 - HTML / CSS / JavaScript bug fixes
 
 ## Hire me
-- Fiverr: https://www.fiverr.com/johanija
-Or if you don't want to paste anything: leaving README out is fine too — the site still works. But with it, your GitHub profile looks more real and professional.
+Fiverr: https://www.fiverr.com/johanija/scrape-any-website-and-deliver-data-in-excel-or-cs
